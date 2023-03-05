@@ -1,0 +1,80 @@
+from news.models import *	
+ 
+		1 
+user1 = User.objects.create(username = 'Максим')
+user2 = User.objects.create(username = 'Екатерина')
+ 
+		2
+author1 = Author.objects.create(user_id=1)
+author2 = Author.objects.create(user_id=2)
+
+		3
+cat1 = Category.objects.create(name = 'Физика')
+cat2 = Category.objects.create(name = 'Биология')
+cat3 = Category.objects.create(name = 'Математика')
+cat4 = Category.objects.create(name = 'География')
+
+		4	
+post1 = Post.objects.create(type = 'ARTICLE', author_id = 1, title = 'Заголовок 1', content ='Пользователи обнаружили, что чат-бот Bing может работать в режиме «Знаменитость» — отвечать на запросы в стиле известных людей, включая Илона Маска, Тома Круза, Тейлор Свифт, Кевина Харта, Дуэйна Джонсона, Бейонсе, Опру Уинфри, Тома Хэнкса, Дидди, Барака Обаму, Леброна Джеймса, Дональда Трампа, Джо Байдена и многих других. Также чат-бот Bing способен выдавать себя за вымышленных персонажей, таких как Гарри Поттер, Бэтмен, Йода, Гэндальф, Дарт Вейдер, Китнисс Эвердин, Шерлок Холмс и Голлум.' )
+
+post2 = Post.objects.create(type = 'ARTICLE', author_id = 2, title = 'Заголовок 2', content = '«Режим «Знаменитости» чат-бота Bing — это функция, которая позволяет вам общаться с виртуальной версией известного человека, такого как актёр, певец или спортсмен. Вы можете задавать им вопросы об их жизни, карьере, увлечениях, мнениях и так далее, а они будут отвечать так, как это соответствует их индивидуальности и стилю, используя свои крылатые фразы», — пояснил ИИ при запросе.') 
+
+post3 = Post.objects.create(type = 'NEWS', author_id = 1, title = 'Заголовок 3', content = 'С 11 февраля новая версия поисковика Bing на базе ChatGPT от Microsoft стала доступна для части пользователей в рамках тестирования версии ИИ-сервиса для ПК. Пользователи, которые ранее зарегистрировались в программе тестирования Bing с чат-ботом ChatGPT, стали получать приглашения на участие в проекте с просьбой присылать обратную связь по использованию новой модели поисковой системы.')
+		
+		5
+post_category1 = PostCategory.objects.create(post_id = 1, category_id = 1)
+post_category2 = PostCategory.objects.create(post_id = 1, category_id = 2)
+post_category3 = PostCategory.objects.create(post_id = 2, category_id = 3)
+
+		6
+com1 = Comment.objects.create(user_id = 1, post_id = 2, text = 'Клёво!')
+com2 = Comment.objects.create(user_id = 1, post_id = 2, text = 'Неплохо..')
+com3 = Comment.objects.create(user_id = 2, post_id = 1, text = 'Хорошо')
+com4 = Comment.objects.create(user_id = 2, post_id = 3, text = 'Ооооо, очень хорошо')
+
+		7
+post1.like()
+post2.like()
+post3.like()
+post3.like()
+post3.dislike()
+com1.like()
+com2.like()
+com3.like()
+com4.like()
+com4.like()
+com4.dislike()
+
+		8
+author1.update_rating()
+author2.update_rating()
+
+		9
+best_author = Author.objects.filter().order_by('-rating')[0]
+User.objects.get(pk = best_author.user_id).username
+best_author.rating
+
+		10
+best_post = Post.objects.filter().order_by('-rating')[0]
+best_post.time_in
+User.objects.get(pk = (Author.objects.get(pk = best_post.author_id).user_id)).username
+best_post.rating
+best_post.title
+best_post.preview()
+
+		11
+comments_to_best_post = Comment.objects.filter(post_id = best_post.pk)
+
+for comment in comments_to_best_post:
+	User.objects.get(pk = comment.user_id).username
+	comment.time_in
+	comment.rating
+	comment.text
+
+
+
+
+
+
+
+
