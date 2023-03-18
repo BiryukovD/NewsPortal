@@ -57,6 +57,8 @@ class Post(models.Model):
     def preview(self):
         preview = self.content
         return preview[:124] + '...'
+    def __str__(self):
+        return f'{self.title} {self.time_in} {self.content[:20]}...'
 
 
 class Comment(models.Model):
