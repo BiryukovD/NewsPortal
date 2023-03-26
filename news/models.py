@@ -1,5 +1,7 @@
 from django.contrib.auth.models import User
 from django.db import models
+from django.urls import reverse
+
 TYPE_POST_CHOICES = [
     ('NEWS', 'NEWS'),
     ('ARCICLE', 'ARTICLE')
@@ -8,6 +10,8 @@ TYPE_POST_CHOICES = [
 
 class Category(models.Model):
     name = models.CharField(max_length=64, unique=True)
+    def __str__(self):
+        return f'{self.name}'
 
 
 class Author(models.Model):
@@ -31,6 +35,8 @@ class Author(models.Model):
         rating_of_author = (points_for_posts * 3) + points_for_comments_by_author + points_for_comments_to_posts_by_author
         self.rating = rating_of_author
         self.save()
+    def __str__(self):
+        return f'{User.objects.get(pk = self.pk)}'
 
 
 class Post(models.Model):
@@ -60,6 +66,9 @@ class Post(models.Model):
     def __str__(self):
         return f'{self.title} {self.time_in} {self.content[:20]}...'
 
+    def get_absolute_url(self):
+        return reverse('post_detail', args=[str(self.id)])
+
 
 class Comment(models.Model):
     text = models.CharField(max_length=64)
@@ -80,7 +89,12 @@ class Comment(models.Model):
         self.rating = added
         self.save()
 
+    def __str__(self):
+        return f'{self.text}'
+
 
 class PostCategory(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    def __str__(self):
+        return f'{self.post} - {self.category}'
