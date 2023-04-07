@@ -1,10 +1,11 @@
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, request
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import Post
 from .filters import PostFilter
 from .forms import *
 from django.urls import reverse_lazy
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 
 
 class PostList(ListView):
@@ -12,7 +13,8 @@ class PostList(ListView):
     template_name = 'posts.html'
     context_object_name = 'posts'
     ordering = 'time_in'
-    paginate_by = 4
+    paginate_by = 10
+
 
 
 class PostListWithFilter(ListView):
@@ -20,7 +22,7 @@ class PostListWithFilter(ListView):
     template_name = 'posts_with_filter.html'
     context_object_name = 'posts'
     ordering = 'time_in'
-    paginate_by = 4
+    paginate_by = 10
 
     def get_queryset(self):
         queryset = super().get_queryset()
@@ -32,14 +34,14 @@ class PostListWithFilter(ListView):
         context['filterset'] = self.filterset
         return context
 
-
 class PostDetail(DetailView):
     model = Post
     template_name = 'post.html'
     context_object_name = 'post'
 
 
-class NewsCreate(CreateView):
+class NewsCreate(PermissionRequiredMixin, CreateView):
+    permission_required = ('news.add_post', 'news.change_post')
     form_class = PostForm
     model = Post
     template_name = 'news_create.html'
@@ -50,7 +52,8 @@ class NewsCreate(CreateView):
         return super().form_valid(form)
 
 
-class NewsEdit(UpdateView):
+class NewsEdit(PermissionRequiredMixin, UpdateView):
+    permission_required = ('news.add_post', 'news.change_post')
     form_class = PostForm
     model = Post
     template_name = 'news_edit.html'
@@ -62,7 +65,8 @@ class NewsDelete(DeleteView):
     success_url = reverse_lazy('posts')
 
 
-class ArticleCreate(CreateView):
+class ArticleCreate(PermissionRequiredMixin, CreateView):
+    permission_required = ('news.add_post', 'news.change_post')
     form_class = PostForm
     model = Post
     template_name = 'article_create.html'
@@ -73,7 +77,8 @@ class ArticleCreate(CreateView):
         return super().form_valid(form)
 
 
-class ArticleEdit(UpdateView):
+class ArticleEdit(PermissionRequiredMixin, UpdateView):
+    permission_required = ('news.add_post', 'news.change_post')
     model = Post
     template_name = 'article_edit.html'
     form_class = PostForm
