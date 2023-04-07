@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load custom_filters %}
+{% block title %}
+{{post.title}}
+{% endblock title %}
+
+
+{% block content %}
+<h1 align="center">{{post.title|censor}}</h1>
+<p align="justify"> {{post.content|censor}} </p>
+<h6 align="right">{{ post.time_in |date:'d M Y' }}</h6>
+{% endblock content %}
