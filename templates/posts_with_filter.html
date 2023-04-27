@@ -14,6 +14,15 @@
        {# Добавим кнопку отправки данных формы #}
        <input type="submit" value="Найти" />
    </form>
+
+
+    {% if is_not_subscriber_of_this_category and selected_category and is_authenticated %}
+    <form method="post">
+        {% csrf_token %}
+    <button>Подписаться на категорию {{ name_selected_category }} </button>
+    </form>
+    {% endif %}
+
    <hr>
    {% if posts %}
        <table align="center" width="1200">

@@ -48,7 +48,10 @@ INSTALLED_APPS = [
     # ... include the providers you want to enable:
     'allauth.socialaccount.providers.google',
 ]
-
+DEFAULT_FROM_EMAIL = 'dim.bir2017@yandex.ru'
+ACCOUNT_SIGNUP_REDIRECT_URL = '/posts/'
+ACCOUNT_CONFIRM_EMAIL_ON_GET = True
+ACCOUNT_LOGIN_ON_EMAIL_CONFIRMATION = True
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -64,7 +67,13 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'News_Portal.urls'
 LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/posts/'
-ACCOUNT_FORMS = {'signup': 'sign.models.BasicSignupForm'}
+ACCOUNT_FORMS = {'signup': 'sign.models.BasicSignupForm', 'reset_password' : 'allauth.account.forms.ResetPasswordForm'}
+
+EMAIL_HOST = 'smtp.yandex.ru'  # адрес сервера Яндекс-почты для всех один и тот же
+EMAIL_PORT = 465  # порт smtp сервера тоже одинаковый
+EMAIL_HOST_USER = 'dim.bir2017'  # ваше имя пользователя, например, если ваша почта user@yandex.ru, то сюда надо писать user, иными словами, это всё то что идёт до собаки
+EMAIL_HOST_PASSWORD = 'ahgesdnskeabzxbs'  # пароль от почты
+EMAIL_USE_SSL = True  # Яндекс использует ssl, подробнее о том, что это, почитайте в дополнительных источниках, но включать его здесь обязательно
 
 TEMPLATES = [
     {
@@ -96,8 +105,10 @@ ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_UNIQUE_EMAIL = True
 ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
-ACCOUNT_EMAIL_VERIFICATION = 'none'
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 ACCOUNT_LOGOUT_REDIRECT_URL = '/posts/'
+ACCOUNT_LOGIN_ON_PASSWORD_RESET = True
+ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 1
 
 WSGI_APPLICATION = 'News_Portal.wsgi.application'
 

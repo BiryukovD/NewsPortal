@@ -36,7 +36,7 @@ class Author(models.Model):
         self.rating = rating_of_author
         self.save()
     def __str__(self):
-        return f'{User.objects.get(pk = self.pk)}'
+        return f'{User.objects.get(pk = self.user_id)}'
 
 
 class Post(models.Model):
@@ -67,7 +67,7 @@ class Post(models.Model):
         return f'{self.title} {self.time_in} {self.content[:20]}...'
 
     def get_absolute_url(self):
-        return reverse('post_detail', args=[str(self.id)])
+        return 'http://127.0.0.1:8000' + reverse('post_detail', args=[str(self.id)])
 
 
 class Comment(models.Model):
@@ -98,3 +98,11 @@ class PostCategory(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     def __str__(self):
         return f'{self.post} - {self.category}'
+
+class Subscriber(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    category = models.ManyToManyField(Category)
+    def __str__(self):
+        return f'{User.objects.get(pk = self.user_id)}'
+
+

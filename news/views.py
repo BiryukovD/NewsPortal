@@ -1,11 +1,18 @@
-from django.http import HttpResponseRedirect, request
-from django.shortcuts import render
+from django.http import HttpResponseRedirect, request, HttpResponse
+from django.shortcuts import render, redirect
+
+from django.template.loader import render_to_string
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
-from .models import Post
+from .models import Post, Subscriber, Category, User
 from .filters import PostFilter
 from .forms import *
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
+
+
+
+
+
 
 
 class PostList(ListView):
@@ -32,7 +39,60 @@ class PostListWithFilter(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['filterset'] = self.filterset
+
+        selected_category = self.request.GET.get('category', False)
+        context['selected_category'] = self.request.GET.get('category', False)
+
+        context['is_authenticated'] = self.request.user.is_authenticated
+
+        context['is_not_subscriber_of_this_category'] = not Subscriber.objects.filter(user_id=self.request.user.pk,
+                                                                                      category__pk=selected_category).exists()
+        if selected_category:
+            context['name_selected_category'] = Category.objects.get(pk=selected_category)
+
         return context
+
+    def post(self, request, *args, **kwargs):
+        selected_category = self.request.GET.get('category', False)
+        category = Category.objects.get(pk=selected_category)
+
+        if not Subscriber.objects.filter(user_id=self.request.user.pk).exists():
+            Subscriber.objects.create(user_id=self.request.user.pk)
+
+        subscriber = Subscriber.objects.get(user_id=self.request.user.pk)
+        subscriber.category.add(category)
+
+        # message = request.POST['message']
+        # send_mail(
+        #     subject='Дмитрий',
+        #     message=message,
+        #     from_email='dim.bir2017@yandex.ru',
+        #     recipient_list=['dim.bir2017@yandex.ru']
+
+        # html_content = render_to_string(
+        #     'mail.html'
+        # )
+        # # в конструкторе уже знакомые нам параметры, да? Называются правда немного по-другому, но суть та же.
+        # msg = EmailMultiAlternatives(
+        #     subject='Дмитрий',
+        #     body='',  # это то же, что и message
+        # from_email = 'dim.bir2017@yandex.ru',
+        #              to = ['andrejmaster14@gmail.com']  # это то же, что и recipients_list
+        # )
+        # msg.attach_alternative(html_content, "text/html")  # добавляем html
+        #
+        # msg.send()  # отсылаем
+
+        return HttpResponseRedirect("/posts/")
+
+
+def test(request):
+    if request.method == "GET":
+        # <view logic>
+        return HttpResponse('<form method="post"> {% csrf_token %} <button>Отправить</button> </form>')
+    if request.method == 'POST':
+        return HttpResponse('Успех')
+
 
 class PostDetail(DetailView):
     model = Post
@@ -40,7 +100,7 @@ class PostDetail(DetailView):
     context_object_name = 'post'
 
 
-class NewsCreate(PermissionRequiredMixin, CreateView):
+class NewsCreate(LoginRequiredMixin, PermissionRequiredMixin, CreateView):
     permission_required = ('news.add_post', 'news.change_post')
     form_class = PostForm
     model = Post
@@ -52,20 +112,20 @@ class NewsCreate(PermissionRequiredMixin, CreateView):
         return super().form_valid(form)
 
 
-class NewsEdit(PermissionRequiredMixin, UpdateView):
+class NewsEdit(LoginRequiredMixin, PermissionRequiredMixin, UpdateView):
     permission_required = ('news.add_post', 'news.change_post')
     form_class = PostForm
     model = Post
     template_name = 'news_edit.html'
 
 
-class NewsDelete(DeleteView):
+class NewsDelete(LoginRequiredMixin, DeleteView):
     model = Post
     template_name = 'news_delete.html'
     success_url = reverse_lazy('posts')
 
 
-class ArticleCreate(PermissionRequiredMixin, CreateView):
+class ArticleCreate(LoginRequiredMixin, PermissionRequiredMixin, CreateView):
     permission_required = ('news.add_post', 'news.change_post')
     form_class = PostForm
     model = Post
@@ -77,15 +137,14 @@ class ArticleCreate(PermissionRequiredMixin, CreateView):
         return super().form_valid(form)
 
 
-class ArticleEdit(PermissionRequiredMixin, UpdateView):
+class ArticleEdit(LoginRequiredMixin, PermissionRequiredMixin, UpdateView):
     permission_required = ('news.add_post', 'news.change_post')
     model = Post
     template_name = 'article_edit.html'
     form_class = PostForm
 
 
-class ArticleDelete(DeleteView):
+class ArticleDelete(LoginRequiredMixin, DeleteView):
     model = Post
     template_name = 'article_delete.html'
     success_url = reverse_lazy('posts')
-
