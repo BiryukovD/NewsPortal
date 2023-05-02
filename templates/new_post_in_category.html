@@ -7,7 +7,7 @@
 </head>
 <body style="background-color: #f9f9fa; margin: 0; padding: 0; -webkit-text-size-adjust: none; text-size-adjust: none;">
 <p align="center">{{ title }}</p>
-<p>{{ content }}</p>
+<p>{{ content|truncatewords:30  }}...</p>
 <p align="center>"></p><a href="{{ instance.get_absolute_url }}"><button>Читать статью полностью</button></a></p>
 
 
