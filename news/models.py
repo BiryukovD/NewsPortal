@@ -1,6 +1,8 @@
 from django.contrib.auth.models import User
 from django.db import models
 from django.urls import reverse
+from django.contrib.sites.models import Site
+
 
 TYPE_POST_CHOICES = [
     ('NEWS', 'NEWS'),
@@ -67,6 +69,7 @@ class Post(models.Model):
         return f'{self.title} {self.time_in} {self.content[:20]}...'
 
     def get_absolute_url(self):
+        current_site = Site.objects.get_current()
         return 'http://127.0.0.1:8000' + reverse('post_detail', args=[str(self.id)])
 
 

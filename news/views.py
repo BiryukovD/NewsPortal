@@ -62,36 +62,9 @@ class PostListWithFilter(ListView):
         subscriber = Subscriber.objects.get(user_id=self.request.user.pk)
         subscriber.category.add(category)
 
-        # message = request.POST['message']
-        # send_mail(
-        #     subject='Дмитрий',
-        #     message=message,
-        #     from_email='dim.bir2017@yandex.ru',
-        #     recipient_list=['dim.bir2017@yandex.ru']
-
-        # html_content = render_to_string(
-        #     'mail.html'
-        # )
-        # # в конструкторе уже знакомые нам параметры, да? Называются правда немного по-другому, но суть та же.
-        # msg = EmailMultiAlternatives(
-        #     subject='Дмитрий',
-        #     body='',  # это то же, что и message
-        # from_email = 'dim.bir2017@yandex.ru',
-        #              to = ['andrejmaster14@gmail.com']  # это то же, что и recipients_list
-        # )
-        # msg.attach_alternative(html_content, "text/html")  # добавляем html
-        #
-        # msg.send()  # отсылаем
-
         return HttpResponseRedirect("/posts/")
 
 
-def test(request):
-    if request.method == "GET":
-        # <view logic>
-        return HttpResponse('<form method="post"> {% csrf_token %} <button>Отправить</button> </form>')
-    if request.method == 'POST':
-        return HttpResponse('Успех')
 
 
 class PostDetail(DetailView):
