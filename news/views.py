@@ -3,17 +3,22 @@ from django.shortcuts import render, redirect
 
 from django.template.loader import render_to_string
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.views import View
 from .models import Post, Subscriber, Category, User
 from .filters import PostFilter
 from .forms import *
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
+from .tasks import hello
 
 
 
 
 
-
+class Index(View):
+    def get(self, request):
+        hello.delay()
+        return HttpResponse('Привет')
 
 class PostList(ListView):
     model = Post

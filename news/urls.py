@@ -1,9 +1,11 @@
 from django.urls import path
-from .views import PostList, PostListWithFilter, PostDetail, NewsCreate, NewsEdit, NewsDelete, ArticleCreate, ArticleEdit, ArticleDelete
+from .views import PostList, PostListWithFilter, PostDetail, NewsCreate, NewsEdit, NewsDelete, ArticleCreate, ArticleEdit, ArticleDelete, Index
 
 
 
 urlpatterns = [
+
+    path('task/', Index.as_view()),
 
     path('posts/', PostList.as_view(), name='posts'),                        # все статьи
     path('posts/search/', PostListWithFilter.as_view()),                     # поиск
