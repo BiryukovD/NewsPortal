@@ -2,6 +2,7 @@ from django.contrib.auth.models import User
 from django.db import models
 from django.urls import reverse
 from django.contrib.sites.models import Site
+from django.core.cache import cache
 
 
 TYPE_POST_CHOICES = [
@@ -71,6 +72,10 @@ class Post(models.Model):
     def get_absolute_url(self):
         current_site = Site.objects.get_current()
         return 'http://127.0.0.1:8000' + reverse('post_detail', args=[str(self.id)])
+
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+        cache.delete(f'post-{self.pk}')
 
 
 class Comment(models.Model):

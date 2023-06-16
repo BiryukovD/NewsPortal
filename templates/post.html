@@ -4,9 +4,53 @@
 {{post.title}}
 {% endblock title %}
 
+<style type="text/css">
+.string_of_table{
+background: green;
+color: red;
+}
+
+
+
+</style>
+
+
 
 {% block content %}
 <h1 align="center">{{post.title|censor}}</h1>
-<p align="justify"> {{post.content|censor}} </p>
+<p align="justify">{{post.content|safe}} </p>
 <h6 align="right">{{ post.time_in |date:'d M Y' }}</h6>
+
+
+
+
+{% if comments %}
+       <table align="center" width="1200">
+
+{% for comment in comments %}
+
+           <tr style="background: #DCDCDC;">
+
+               <td align="center" style="padding: 40px;">{{ user }}</td>
+               <td align="center" style="padding: 40px;">{{ comment.text }}</td>
+               <td align="center" style="padding: 40px">{{ comment.time_in |date:'d M Y' }}</td>
+
+           </tr>
+
+
+{% endfor %}
+
+</table>
+{% else %}
+       <h2 align="center">Нет комментариев</h2>
+{% endif %}
+
+
+<form method="post" align="center" style="margin-top: 50px; margin-bottom: 100px; ">
+    {% csrf_token %}
+    <input name="text_of_comment" type="text" placeholder="Ваш комментарий" style="width: 1000px; height: 200px">
+    <input type="submit" value="Отправить">
+    <button>Лайк</button>
+</form>
+
 {% endblock content %}

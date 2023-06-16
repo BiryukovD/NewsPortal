@@ -11327,3 +11327,9 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
     margin-left: -15rem;
   }
 }
+
+#string_of_table{
+margin-left: 100px;
+color: red;
+
+}

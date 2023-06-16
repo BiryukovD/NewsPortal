@@ -8,6 +8,7 @@ admin.site.register(Category)
 admin.site.register(PostCategory)
 admin.site.register(Subscriber)
 
+
 # Register your models here.
 
 

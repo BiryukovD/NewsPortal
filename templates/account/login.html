@@ -1,22 +1,62 @@
-<!DOCTYPE html>
+{% extends "account/base.html" %}
+
+{% load i18n %}
+{% load account socialaccount %}
+
+{% block head_title %}{% trans "Sign In" %}{% endblock %}
+
+{% block content %}
+<div class="wrapper">
+  <div class="header">
+    <h3 class="sign-in">Вход</h3>
+
+   <a href="{{ signup_url }}"><div class="button">
+       Регистрация
+    </div></a>
+  </div>
+
+   <div class="clear"></div>
+
+  <form  class="login" method="POST" action="{% url 'account_login' %}">
+   {% csrf_token %}
+   {{ form.login }}
+   {{ form.password }}
+      <input type="submit" value="Войти" />
+
+    <div class="radio-check">
+      {{ form.remember }}
+    </div>
+      <span class="check-label">Запомнить меня</span>
+
+      <a href="{% url 'account_reset_password' %}">
+        <div class="button">Забыли пароль?</div> </a>
+
+      <div class="clear"></div>
+  </form>
+</div>
+
+{% endblock %}
+
+<!--<!DOCTYPE html>
 <html >
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block head_title %}{% endblock %}</title>
-    {% block extra_head %}
-    {% endblock %}
-    {% load static %}
-    <link href="{% static 'css/style1.css' %}" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-    <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css'>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <title>Вход</title>
+              {% load static %}
+        <link href="{% static 'css/style1.css' %}" rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
+  <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
 </head>
 
 <body>
-  <!-- ICONS -->
-<svg id="svg-source" height="0" version="1.1"  xmlns="http://www.w3.org/2000/svg"
+
+<svg id="svg-source" height="0" version="1.1"  xmlns="http://www.w3.org/2000/svg" 
 xmlns:xlink="http://www.w3.org/1999/xlink" style="position: absolute">
  <g id="man-people-user" data-iconmelon="Streamline Icon Set:de32eb2621491c1a881a9fe846236da1">
     <g id="Expanded">
@@ -61,15 +101,42 @@ xmlns:xlink="http://www.w3.org/1999/xlink" style="position: absolute">
       </g>
    </g>
 </svg>
-<!-- ICONS -->
 
 
 
-{% block content%}
 
 
-{% endblock %}
+<div class="wrapper">
+  <div class="header">
+    <h3 class="sign-in">Вход</h3>
 
+   <a href="{{ signup_url }}"><div class="button">
+       Регистрация
+    </div></a>
+  </div>
+
+   <div class="clear"></div>
+
+  <form  class="login" method="POST" action="{% url 'account_login' %}">
+   {% csrf_token %}
+   {{ form.login }}
+   {{ form.password }}
+      <input type="submit" value="Войти" />
+
+    <div class="radio-check">   
+      {{ form.remember }}
+    </div>
+      <span class="check-label">Запомнить меня</span>
+
+      <a href="{% url 'account_reset_password' %}">
+        <div class="button">Забыли пароль?</div> </a>
+
+      <div class="clear"></div>
+  </form>  
+</div>
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+  
 </body>
 </html>
+-->>

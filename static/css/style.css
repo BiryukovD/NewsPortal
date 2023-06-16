@@ -1,0 +1,16 @@
+html{
+  background: #1a1f25;
+  color: white;
+    margin-left: auto;
+    margin-right: auto;
+    width: 12em
+
+      position: fixed;
+  top: 50%;
+  left: 50%;
+
+  width: 300px;
+  height: 200px;
+
+    }
+

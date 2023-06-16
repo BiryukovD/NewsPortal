@@ -4,12 +4,13 @@ from django.shortcuts import render, redirect
 from django.template.loader import render_to_string
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.views import View
-from .models import Post, Subscriber, Category, User
+from .models import Post, Subscriber, Category, User, Comment
 from .filters import PostFilter
 from .forms import *
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from .tasks import hello
+from django.core.cache import cache
 
 
 
@@ -60,10 +61,8 @@ class PostListWithFilter(ListView):
     def post(self, request, *args, **kwargs):
         selected_category = self.request.GET.get('category', False)
         category = Category.objects.get(pk=selected_category)
-
         if not Subscriber.objects.filter(user_id=self.request.user.pk).exists():
             Subscriber.objects.create(user_id=self.request.user.pk)
-
         subscriber = Subscriber.objects.get(user_id=self.request.user.pk)
         subscriber.category.add(category)
 
@@ -76,6 +75,28 @@ class PostDetail(DetailView):
     model = Post
     template_name = 'post.html'
     context_object_name = 'post'
+
+    def get_object(self, *args, **kwargs):
+        obj = cache.get(f'post-{self.kwargs["pk"]}',
+                        None)
+        if not obj:
+            obj = super().get_object(queryset=self.queryset)
+            cache.set(f'post-{self.kwargs["pk"]}', obj)
+
+        return obj
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        comments = Comment.objects.filter(post=self.object.pk)
+        context['comments'] = comments
+        return context
+
+    def post(self, request, *args, **kwargs):
+        text_of_comment = self.request.POST.get('text_of_comment', 'Undefinded')
+        Comment.objects.create(text=text_of_comment, user_id=self.request.user.pk, post_id=self.get_object().pk)
+
+        return HttpResponseRedirect(f"{self.request.path}")
+
 
 
 class NewsCreate(LoginRequiredMixin, PermissionRequiredMixin, CreateView):
@@ -126,3 +147,8 @@ class ArticleDelete(LoginRequiredMixin, DeleteView):
     model = Post
     template_name = 'article_delete.html'
     success_url = reverse_lazy('posts')
+
+class Profile(ListView):
+    model = Post
+    template_name = 'posts.html'
+    template_name = 'profile.html'

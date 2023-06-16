@@ -1,11 +1,12 @@
 from django.urls import path
-from .views import PostList, PostListWithFilter, PostDetail, NewsCreate, NewsEdit, NewsDelete, ArticleCreate, ArticleEdit, ArticleDelete, Index
-
+from .views import PostList, PostListWithFilter, PostDetail, NewsCreate, NewsEdit, NewsDelete, ArticleCreate, ArticleEdit, ArticleDelete, Index, Profile
+from django.views.decorators.cache import cache_page
 
 
 urlpatterns = [
 
     path('task/', Index.as_view()),
+    path('profile/', Profile.as_view()),
 
     path('posts/', PostList.as_view(), name='posts'),                        # все статьи
     path('posts/search/', PostListWithFilter.as_view()),                     # поиск

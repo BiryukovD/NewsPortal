@@ -1,0 +1,6 @@
+2023-06-16 14:52:33,140 INFO autoreload Watching for file changes with StatReloader
+2023-06-16 14:53:19,753 INFO autoreload Watching for file changes with StatReloader
+2023-06-16 14:54:05,904 INFO autoreload /home/dmitry/projects/News_Portal/News_Portal/News_Portal/settings.py changed, reloading.
+2023-06-16 14:54:06,580 INFO autoreload Watching for file changes with StatReloader
+2023-06-16 14:57:12,540 INFO autoreload /home/dmitry/projects/News_Portal/News_Portal/News_Portal/settings.py changed, reloading.
+2023-06-16 14:57:13,196 INFO autoreload Watching for file changes with StatReloader

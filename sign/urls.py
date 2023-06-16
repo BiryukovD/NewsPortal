@@ -4,7 +4,7 @@ from .views import BaseRegisterView, upgrade_me
 
 urlpatterns = [
     path('login/',
-         LoginView.as_view(template_name='login.html'),
+         LoginView.as_view(template_name='loginn.html'),
          name='login'),
     path('logout/',
          LogoutView.as_view(template_name='logout.html'),

@@ -51,10 +51,19 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.google',
     'django_apscheduler'
 ]
+
 DEFAULT_FROM_EMAIL = os.getenv('DEFAULT_FROM_EMAIL')
 ACCOUNT_SIGNUP_REDIRECT_URL = '/posts/'
 ACCOUNT_CONFIRM_EMAIL_ON_GET = True
 ACCOUNT_LOGIN_ON_EMAIL_CONFIRMATION = True
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
+        'LOCATION': os.path.join(BASE_DIR, 'cache_files'),
+    }
+}
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -75,11 +84,15 @@ LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/posts/'
 ACCOUNT_FORMS = {'signup': 'sign.models.BasicSignupForm', 'reset_password': 'allauth.account.forms.ResetPasswordForm'}
 
+ADMINS = (
+    ('Dmitry', 'dmitrijbirukov94@gmail.com'),
+)
 EMAIL_HOST = 'smtp.yandex.ru'
 EMAIL_PORT = 465
 EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
 EMAIL_USE_SSL = True
+
 
 CELERY_BROKER_URL = 'redis://localhost:6379'
 CELERY_RESULT_BACKEND = 'redis://localhost:6379'
@@ -177,5 +190,122 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATICFILES_DIRS = [
-              BASE_DIR / 'static'
-                   ]
+    os.path.join(BASE_DIR, "static"),
+]
+
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "formatters": {
+        "formatter_console_debug": {
+            "format": "{asctime} {levelname} {message}",
+            "style": "{",
+        },
+        "formatter_console_warning": {
+            "format": "{asctime} {levelname} {message} {pathname}",
+            "style": "{",
+        },
+        "formatter_console_errors": {
+            "format": "{asctime} {levelname} {message} {pathname} {exc_info}",
+            "style": "{",
+        },
+        "formatter_file_info": {
+            "format": "{asctime} {levelname} {module} {message}",
+            "style": "{",
+        },
+        "formatter_file_errors": {
+            "format": "{asctime} {levelname} {message} {pathname}",
+            "style": "{",
+        },
+        "formatter_file_security": {
+            "format": "{asctime} {levelname} {module} {message}",
+            "style": "{",
+        },
+        "formatter_mail_admins": {
+            "format": "{asctime} {levelname} {message} {pathname}",
+            "style": "{",
+        },
+
+    },
+    "filters": {
+
+        "require_debug_true": {
+            "()": "django.utils.log.RequireDebugTrue",
+        },
+    },
+    "handlers": {
+        "console_debug": {
+            "level": "DEBUG",
+            "filters": ["require_debug_true"],
+            "class": "logging.StreamHandler",
+            "formatter": "formatter_console_debug",
+        },
+        "console_warning": {
+            "level": "WARNING",
+            "filters": ["require_debug_true"],
+            "class": "logging.StreamHandler",
+            "formatter": "formatter_console_warning",
+        },
+        "console_errors": {
+            "level": "ERROR",
+            "class": "logging.StreamHandler",
+            "formatter": "formatter_console_errors",
+        },
+        "file_info": {
+            "level": "INFO",
+            "class": "logging.FileHandler",
+            "filename": "logs/general.log",
+            "formatter": "formatter_file_info",
+        },
+        "file_errors": {
+            "level": "ERROR",
+            "class": "logging.FileHandler",
+            "filename": "logs/errors.log",
+            "formatter": "formatter_file_errors",
+        },
+        "file_security": {
+            "class": "logging.FileHandler",
+            "filename": "logs/security.log",
+            "formatter": "formatter_file_security",
+        },
+        "mail_admins": {
+            "level": "ERROR",
+            "class": "django.utils.log.AdminEmailHandler",
+            "formatter": "formatter_mail_admins",
+        },
+    },
+
+    "loggers": {
+        "django": {
+            "handlers": ["console_debug", "console_warning", "console_errors", "file_info"],
+            "propagate": True,
+        },
+        "django.request": {
+            "handlers": ["file_errors", "mail_admins"],
+            "level": "ERROR",
+            "propagate": False,
+        },
+        "django.server": {
+            "handlers": ["file_errors", "mail_admins"],
+            "level": "ERROR",
+            "propagate": False,
+        },
+        "django.template": {
+            "handlers": ["file_errors"],
+            "level": "ERROR",
+            "propagate": False,
+        },
+        "django.db.backends": {
+            "handlers": ["file_errors"],
+            "level": "ERROR",
+            "propagate": False,
+        },
+        "django.security": {
+            "handlers": ["file_security"],
+            "propagate": False,
+        },
+
+
+    },
+}
+
