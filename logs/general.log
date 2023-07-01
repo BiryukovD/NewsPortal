@@ -4,3 +4,75 @@
 2023-06-16 14:54:06,580 INFO autoreload Watching for file changes with StatReloader
 2023-06-16 14:57:12,540 INFO autoreload /home/dmitry/projects/News_Portal/News_Portal/News_Portal/settings.py changed, reloading.
 2023-06-16 14:57:13,196 INFO autoreload Watching for file changes with StatReloader
+2023-06-17 07:18:35,614 INFO autoreload Watching for file changes with StatReloader
+2023-06-17 07:19:32,742 INFO autoreload /home/dmitry/projects/News_Portal/News_Portal/News_Portal/settings.py changed, reloading.
+2023-06-17 07:19:33,411 INFO autoreload Watching for file changes with StatReloader
+2023-06-17 07:19:50,592 INFO autoreload /home/dmitry/projects/News_Portal/News_Portal/News_Portal/settings.py changed, reloading.
+2023-06-17 07:19:51,276 INFO autoreload Watching for file changes with StatReloader
+2023-06-17 07:24:48,720 INFO autoreload Watching for file changes with StatReloader
+2023-06-17 07:27:52,606 INFO autoreload /home/dmitry/projects/News_Portal/News_Portal/News_Portal/settings.py changed, reloading.
+2023-06-17 07:27:53,130 INFO autoreload Watching for file changes with StatReloader
+2023-06-17 07:29:21,824 INFO autoreload /home/dmitry/projects/News_Portal/News_Portal/News_Portal/settings.py changed, reloading.
+2023-06-17 07:29:22,463 INFO autoreload Watching for file changes with StatReloader
+2023-06-17 07:36:35,029 INFO autoreload /home/dmitry/projects/News_Portal/News_Portal/News_Portal/settings.py changed, reloading.
+2023-06-17 07:36:35,703 INFO autoreload Watching for file changes with StatReloader
+2023-06-17 07:40:30,853 INFO autoreload /home/dmitry/projects/News_Portal/News_Portal/News_Portal/settings.py changed, reloading.
+2023-06-17 07:40:31,421 INFO autoreload Watching for file changes with StatReloader
+2023-06-17 07:40:35,665 INFO autoreload /home/dmitry/projects/News_Portal/News_Portal/News_Portal/settings.py changed, reloading.
+2023-06-17 07:40:36,271 INFO autoreload Watching for file changes with StatReloader
+2023-06-17 07:44:38,083 INFO autoreload Watching for file changes with StatReloader
+2023-06-17 07:52:14,929 INFO autoreload /home/dmitry/projects/News_Portal/News_Portal/News_Portal/settings.py changed, reloading.
+2023-06-17 07:52:15,615 INFO autoreload Watching for file changes with StatReloader
+2023-06-17 07:52:16,835 INFO autoreload /home/dmitry/projects/News_Portal/News_Portal/News_Portal/settings.py changed, reloading.
+2023-06-17 07:52:17,446 INFO autoreload Watching for file changes with StatReloader
+2023-06-17 07:56:28,300 INFO autoreload Watching for file changes with StatReloader
+2023-06-17 07:58:59,120 INFO autoreload /home/dmitry/projects/News_Portal/News_Portal/News_Portal/urls.py changed, reloading.
+2023-06-17 07:58:59,787 INFO autoreload Watching for file changes with StatReloader
+2023-06-17 10:02:59,502 INFO autoreload Watching for file changes with StatReloader
+2023-06-17 10:10:44,155 INFO autoreload /home/dmitry/projects/News_Portal/News_Portal/news/models.py changed, reloading.
+2023-06-17 10:10:44,727 INFO autoreload Watching for file changes with StatReloader
+2023-06-17 10:11:58,054 INFO autoreload /home/dmitry/projects/News_Portal/News_Portal/news/models.py changed, reloading.
+2023-06-17 10:11:58,699 INFO autoreload Watching for file changes with StatReloader
+2023-06-17 10:13:55,312 INFO autoreload Watching for file changes with StatReloader
+2023-06-17 10:40:06,308 INFO autoreload Watching for file changes with StatReloader
+2023-06-17 11:41:35,344 INFO autoreload Watching for file changes with StatReloader
+2023-06-17 12:04:18,225 INFO autoreload /home/dmitry/projects/News_Portal/News_Portal/news/admin.py changed, reloading.
+2023-06-17 12:04:18,898 INFO autoreload Watching for file changes with StatReloader
+2023-06-17 12:25:13,911 INFO autoreload Watching for file changes with StatReloader
+2023-06-18 12:11:47,989 INFO autoreload Watching for file changes with StatReloader
+2023-06-18 12:12:32,408 INFO autoreload /home/dmitry/projects/News_Portal/News_Portal/News_Portal/urls.py changed, reloading.
+2023-06-18 12:12:33,085 INFO autoreload Watching for file changes with StatReloader
+2023-06-18 12:13:26,293 INFO autoreload Watching for file changes with StatReloader
+2023-06-18 12:17:31,152 INFO autoreload Watching for file changes with StatReloader
+2023-06-18 12:22:27,785 INFO autoreload /home/dmitry/projects/News_Portal/News_Portal/News_Portal/urls.py changed, reloading.
+2023-06-18 12:22:28,479 INFO autoreload Watching for file changes with StatReloader
+2023-06-18 12:24:59,002 INFO autoreload /home/dmitry/projects/News_Portal/News_Portal/News_Portal/urls.py changed, reloading.
+2023-06-18 12:24:59,694 INFO autoreload Watching for file changes with StatReloader
+2023-06-18 12:25:16,821 INFO autoreload /home/dmitry/projects/News_Portal/News_Portal/News_Portal/urls.py changed, reloading.
+2023-06-18 12:25:17,500 INFO autoreload Watching for file changes with StatReloader
+2023-06-18 12:25:40,093 INFO autoreload /home/dmitry/projects/News_Portal/News_Portal/News_Portal/urls.py changed, reloading.
+2023-06-18 12:25:40,780 INFO autoreload Watching for file changes with StatReloader
+2023-06-18 12:25:47,462 INFO autoreload /home/dmitry/projects/News_Portal/News_Portal/News_Portal/urls.py changed, reloading.
+2023-06-18 12:25:48,185 INFO autoreload Watching for file changes with StatReloader
+2023-06-18 12:34:09,935 INFO autoreload /home/dmitry/projects/News_Portal/News_Portal/News_Portal/urls.py changed, reloading.
+2023-06-18 12:34:10,621 INFO autoreload Watching for file changes with StatReloader
+2023-06-18 12:35:27,886 INFO autoreload Watching for file changes with StatReloader
+2023-06-18 12:36:46,685 INFO autoreload Watching for file changes with StatReloader
+2023-06-18 12:39:19,398 INFO autoreload /home/dmitry/projects/News_Portal/News_Portal/news/views.py changed, reloading.
+2023-06-18 12:39:20,088 INFO autoreload Watching for file changes with StatReloader
+2023-06-18 12:40:28,964 INFO autoreload /home/dmitry/projects/News_Portal/News_Portal/news/views.py changed, reloading.
+2023-06-18 12:40:29,683 INFO autoreload Watching for file changes with StatReloader
+2023-06-18 12:41:18,362 INFO autoreload Watching for file changes with StatReloader
+2023-06-18 12:42:48,261 INFO autoreload /home/dmitry/projects/News_Portal/News_Portal/News_Portal/urls.py changed, reloading.
+2023-06-18 12:42:48,982 INFO autoreload Watching for file changes with StatReloader
+2023-06-18 14:14:32,125 INFO autoreload Watching for file changes with StatReloader
+2023-06-18 14:15:38,785 INFO autoreload /home/dmitry/projects/News_Portal/News_Portal/news/serializers.py changed, reloading.
+2023-06-18 14:15:39,477 INFO autoreload Watching for file changes with StatReloader
+2023-06-18 14:27:34,597 INFO autoreload Watching for file changes with StatReloader
+2023-06-18 14:40:14,986 INFO autoreload Watching for file changes with StatReloader
+2023-06-18 15:03:16,689 INFO autoreload Watching for file changes with StatReloader
+2023-06-26 18:06:08,724 INFO autoreload Watching for file changes with StatReloader
+2023-06-26 18:19:35,638 INFO autoreload Watching for file changes with StatReloader
+2023-06-26 18:47:41,103 INFO autoreload Watching for file changes with StatReloader
+2023-06-27 06:24:33,180 INFO autoreload Watching for file changes with StatReloader
+2023-06-30 14:08:23,157 INFO autoreload Watching for file changes with StatReloader

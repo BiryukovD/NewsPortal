@@ -21,21 +21,20 @@ color: red;
 <p align="justify">{{post.content|safe}} </p>
 <h6 align="right">{{ post.time_in |date:'d M Y' }}</h6>
 
-
-
-
 {% if comments %}
-       <table align="center" width="1200">
-
 {% for comment in comments %}
 
-           <tr style="background: #DCDCDC;">
 
-               <td align="center" style="padding: 40px;">{{ user }}</td>
-               <td align="center" style="padding: 40px;">{{ comment.text }}</td>
-               <td align="center" style="padding: 40px">{{ comment.time_in |date:'d M Y' }}</td>
+<table>
+  <tr>
+      <div class="p-3"> <td>{{ user }}</td></div>
+     <div class="p-3">  <td>{{ comment.text }}</td></div>
+      <div class="p-3"> <td>{{ comment.time_in |date:'d M Y' }}</td></div>
+  </tr>
 
-           </tr>
+
+
+
 
 
 {% endfor %}

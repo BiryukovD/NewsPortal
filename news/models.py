@@ -3,6 +3,8 @@ from django.db import models
 from django.urls import reverse
 from django.contrib.sites.models import Site
 from django.core.cache import cache
+from django.utils.translation import gettext as _
+from django.utils.translation import pgettext_lazy
 
 
 TYPE_POST_CHOICES = [
@@ -46,7 +48,7 @@ class Post(models.Model):
     category = models.ManyToManyField(Category, through='PostCategory')
     type = models.CharField(max_length=64, choices=TYPE_POST_CHOICES)
     time_in = models.DateTimeField(auto_now_add=True)
-    title = models.CharField(max_length=64, blank=True)
+    title = models.CharField(max_length=64, blank=True, help_text=_('Title'))
     content = models.TextField(blank=True)
     rating = models.IntegerField(default=0)
     author = models.ForeignKey(Author, on_delete=models.CASCADE)

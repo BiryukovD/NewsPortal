@@ -1,0 +1,136 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-17 10:12+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
+"(n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: fpages/admin.py:11
+msgid "Advanced options"
+msgstr ""
+
+#: news/models.py:51
+msgid "Title"
+msgstr "Заголовок"
+
+#: static/css/base.html:25
+msgid "Messages:"
+msgstr ""
+
+#: static/css/base.html:35
+msgid "Menu:"
+msgstr ""
+
+#: static/css/base.html:38
+msgid "Change E-mail"
+msgstr ""
+
+#: static/css/base.html:39 templates/account/logout.html:3
+#: templates/account/logout.html:36
+msgid "Sign Out"
+msgstr ""
+
+#: static/css/base.html:41 templates/account/login.html:6
+#: templates/account/signup.html:6
+msgid "Sign In"
+msgstr ""
+
+#: static/css/base.html:42
+msgid "Sign Up"
+msgstr ""
+
+#: templates/account/password_reset.html:4
+#: templates/account/password_reset.html:47
+msgid "Password Reset"
+msgstr ""
+
+#: templates/account/password_reset.html:52
+msgid ""
+"Forgotten your password? Enter your e-mail address below, and we'll send you "
+"an e-mail allowing you to reset it."
+msgstr ""
+
+#: templates/account/password_reset.html:57
+msgid "Reset My Password"
+msgstr ""
+
+#: templates/account/password_reset.html:60
+msgid "Please contact us if you have any trouble resetting your password."
+msgstr ""
+
+#: templates/account/password_reset_from_key.html:5
+#: templates/account/password_reset_from_key.html:44
+#: templates/account/password_reset_from_key.html:49
+msgid "Set Password"
+msgstr "Установить пароль"
+
+#: templates/base.html:21
+msgid "Menu"
+msgstr "Меню"
+
+#: templates/base.html:23
+msgid "All posts"
+msgstr "Все публикации"
+
+#: templates/base.html:24
+msgid "Search"
+msgstr "Поиск"
+
+#: templates/base.html:25
+msgid "Add news"
+msgstr "Добавить новость"
+
+#: templates/base.html:26
+msgid "Edit news"
+msgstr "Редактировать новость"
+
+#: templates/base.html:27
+msgid "Delete news"
+msgstr "Удалить новость"
+
+#: templates/base.html:28
+msgid "Add article"
+msgstr "Добавить статью"
+
+#: templates/base.html:29
+msgid "Edit article"
+msgstr "Редактировать статью"
+
+#: templates/base.html:30
+msgid "Delete article"
+msgstr "Удалить статью"
+
+#: templates/base.html:38
+msgid "Toggle Menu"
+msgstr "Переключить меню"
+
+#: templates/base.html:45
+msgid "Become an author"
+msgstr "Стать автором"
+
+#: templates/base.html:47
+msgid "Log out"
+msgstr "Выход"
+
+#: templates/base.html:49
+msgid "Log in"
+msgstr "Вход"
+
+#: templates/base.html:50
+msgid "Sign up"
+msgstr "Регистрация"

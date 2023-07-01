@@ -1,3 +1,4 @@
+from rest_framework import generics
 from django.http import HttpResponseRedirect, request, HttpResponse
 from django.shortcuts import render, redirect
 
@@ -11,7 +12,7 @@ from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from .tasks import hello
 from django.core.cache import cache
-
+from .serializers import PostSerializer
 
 
 
@@ -152,3 +153,7 @@ class Profile(ListView):
     model = Post
     template_name = 'posts.html'
     template_name = 'profile.html'
+
+class PostAPIView(generics.ListAPIView):
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer

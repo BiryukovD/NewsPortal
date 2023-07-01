@@ -1,0 +1,759 @@
+2023-06-17 07:57:47,814 ERROR Internal Server Error: /posts/ /home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/utils/log.py
+Traceback (most recent call last):
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/defaulttags.py", line 321, in render
+    return nodelist.render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'set_language' not found. 'set_language' is not a valid view function or pattern name.
+2023-06-17 07:57:48,073 ERROR "GET /posts/ HTTP/1.1" 500 208449 /home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/core/servers/basehttp.py
+2023-06-18 12:32:59,327 ERROR Internal Server Error: /posts/ /home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/utils/log.py
+Traceback (most recent call last):
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+sqlite3.OperationalError: no such column: news_post.title_en_us
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1070, in render
+    return render_value_in_context(output, context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1047, in render_value_in_context
+    value = str(value)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/models/query.py", line 374, in __repr__
+    data = list(self[: REPR_OUTPUT_SIZE + 1])
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/models/query.py", line 398, in __iter__
+    self._fetch_all()
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1560, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+django.db.utils.OperationalError: no such column: news_post.title_en_us
+2023-06-18 12:32:59,576 ERROR "GET /posts/ HTTP/1.1" 500 224215 /home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/core/servers/basehttp.py
+2023-06-18 12:34:12,457 ERROR Internal Server Error: /posts/ /home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/utils/log.py
+Traceback (most recent call last):
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+sqlite3.OperationalError: no such column: news_post.title_en_us
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1070, in render
+    return render_value_in_context(output, context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1047, in render_value_in_context
+    value = str(value)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/models/query.py", line 374, in __repr__
+    data = list(self[: REPR_OUTPUT_SIZE + 1])
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/models/query.py", line 398, in __iter__
+    self._fetch_all()
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1560, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+django.db.utils.OperationalError: no such column: news_post.title_en_us
+2023-06-18 12:34:12,771 ERROR "GET /posts/ HTTP/1.1" 500 224352 /home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/core/servers/basehttp.py
+2023-06-18 12:34:28,210 ERROR Internal Server Error: /posts/ /home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/utils/log.py
+Traceback (most recent call last):
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+sqlite3.OperationalError: no such column: news_post.title_en_us
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1070, in render
+    return render_value_in_context(output, context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1047, in render_value_in_context
+    value = str(value)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/models/query.py", line 374, in __repr__
+    data = list(self[: REPR_OUTPUT_SIZE + 1])
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/models/query.py", line 398, in __iter__
+    self._fetch_all()
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1560, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+django.db.utils.OperationalError: no such column: news_post.title_en_us
+2023-06-18 12:34:28,441 ERROR "GET /posts/ HTTP/1.1" 500 224215 /home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/core/servers/basehttp.py
+2023-06-18 12:34:56,390 ERROR Internal Server Error: /posts/search/ /home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/utils/log.py
+Traceback (most recent call last):
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+sqlite3.OperationalError: no such column: news_post.title_en_us
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1070, in render
+    return render_value_in_context(output, context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1047, in render_value_in_context
+    value = str(value)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/models/query.py", line 374, in __repr__
+    data = list(self[: REPR_OUTPUT_SIZE + 1])
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/models/query.py", line 398, in __iter__
+    self._fetch_all()
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1560, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+django.db.utils.OperationalError: no such column: news_post.title_en_us
+2023-06-18 12:34:56,657 ERROR "GET /posts/search/ HTTP/1.1" 500 225679 /home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/core/servers/basehttp.py
+2023-06-18 12:35:36,105 ERROR Internal Server Error: /posts/ /home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/utils/log.py
+Traceback (most recent call last):
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+sqlite3.OperationalError: no such column: news_post.title_en_us
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1070, in render
+    return render_value_in_context(output, context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1047, in render_value_in_context
+    value = str(value)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/models/query.py", line 374, in __repr__
+    data = list(self[: REPR_OUTPUT_SIZE + 1])
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/models/query.py", line 398, in __iter__
+    self._fetch_all()
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1560, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+django.db.utils.OperationalError: no such column: news_post.title_en_us
+2023-06-18 12:35:36,350 ERROR "GET /posts/ HTTP/1.1" 500 224215 /home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/core/servers/basehttp.py
+2023-06-18 12:36:47,963 ERROR Internal Server Error: /posts/ /home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/utils/log.py
+Traceback (most recent call last):
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+sqlite3.OperationalError: no such column: news_post.title_en_us
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1070, in render
+    return render_value_in_context(output, context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1047, in render_value_in_context
+    value = str(value)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/models/query.py", line 374, in __repr__
+    data = list(self[: REPR_OUTPUT_SIZE + 1])
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/models/query.py", line 398, in __iter__
+    self._fetch_all()
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1560, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+django.db.utils.OperationalError: no such column: news_post.title_en_us
+2023-06-18 12:36:48,189 ERROR "GET /posts/ HTTP/1.1" 500 224352 /home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/core/servers/basehttp.py
+2023-06-18 12:37:38,636 ERROR Internal Server Error: /posts/ /home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/utils/log.py
+Traceback (most recent call last):
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+sqlite3.OperationalError: no such column: news_post.title_en_us
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1070, in render
+    return render_value_in_context(output, context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1047, in render_value_in_context
+    value = str(value)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/models/query.py", line 374, in __repr__
+    data = list(self[: REPR_OUTPUT_SIZE + 1])
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/models/query.py", line 398, in __iter__
+    self._fetch_all()
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1560, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+django.db.utils.OperationalError: no such column: news_post.title_en_us
+2023-06-18 12:37:38,881 ERROR "GET /posts/ HTTP/1.1" 500 224352 /home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/core/servers/basehttp.py
+2023-06-18 12:37:40,770 ERROR Internal Server Error: /posts/ /home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/utils/log.py
+Traceback (most recent call last):
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+sqlite3.OperationalError: no such column: news_post.title_en_us
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1070, in render
+    return render_value_in_context(output, context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1047, in render_value_in_context
+    value = str(value)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/models/query.py", line 374, in __repr__
+    data = list(self[: REPR_OUTPUT_SIZE + 1])
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/models/query.py", line 398, in __iter__
+    self._fetch_all()
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1560, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+django.db.utils.OperationalError: no such column: news_post.title_en_us
+2023-06-18 12:37:41,052 ERROR "GET /posts/ HTTP/1.1" 500 224352 /home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/core/servers/basehttp.py
+2023-06-18 12:38:28,772 ERROR Internal Server Error: /posts/ /home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/utils/log.py
+Traceback (most recent call last):
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+sqlite3.OperationalError: no such column: news_post.title_en_us
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1070, in render
+    return render_value_in_context(output, context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/template/base.py", line 1047, in render_value_in_context
+    value = str(value)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/models/query.py", line 374, in __repr__
+    data = list(self[: REPR_OUTPUT_SIZE + 1])
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/models/query.py", line 398, in __iter__
+    self._fetch_all()
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1560, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+django.db.utils.OperationalError: no such column: news_post.title_en_us
+2023-06-18 12:38:28,989 ERROR "GET /posts/ HTTP/1.1" 500 224352 /home/dmitry/projects/News_Portal/venv/lib/python3.10/site-packages/django/core/servers/basehttp.py
